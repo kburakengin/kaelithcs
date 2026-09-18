@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gizlilik Politikası — kaelith-clipper</title>
+<style>
+  :root {
+    --ground: #0c1210;
+    --panel: #141a17;
+    --line: #23302a;
+    --ink: #e8edf5;
+    --muted: #8b95a7;
+    --accent: #12fc10;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 56px 20px 80px; }
+  h1 { font-size: 1.7rem; margin: 0 0 .3rem; }
+  h2 { font-size: 1.02rem; margin: 2.2rem 0 .6rem; color: var(--accent); }
+  .date { color: var(--muted); margin: 0 0 2rem; font-size: .92rem; }
+  ul { padding-left: 1.2rem; }
+  li { margin: .35rem 0; }
+  a { color: var(--accent); }
+  code {
+    font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+    font-size: .9em; background: var(--panel); border: 1px solid var(--line);
+    border-radius: 5px; padding: .1em .4em;
+  }
+  footer {
+    margin-top: 3rem; padding-top: 1.4rem; border-top: 1px solid var(--line);
+    color: var(--muted); font-size: .9rem;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Gizlilik Politikası</h1>
+  <p class="date">kaelith-clipper · Son güncelleme: 18 Eylül 2026</p>
+
+  <p>
+    kaelith-clipper, kullanıcının kendi bilgisayarında çalışan bir masaüstü
+    aracıdır. Geliştiricinin işlettiği hiçbir sunucu, veritabanı veya hesap
+    sistemi yoktur.
+  </p>
+
+  <h2>Toplanan veri</h2>
+  <p>
+    <strong>Hiçbir veri toplanmaz, geliştiriciye veya üçüncü taraflara
+    gönderilmez.</strong> Araç analitik, telemetri veya hata raporlama
+    içermez.
+  </p>
+
+  <h2>Bilgisayarda tutulanlar</h2>
+  <ul>
+    <li><strong>Video dosyaları</strong> — OBS'in ürettiği klipler ve oturum
+      kayıtları, kullanıcının kendi diskinde.</li>
+    <li><strong>Oyun olayları</strong> — CS2'nin yerel ağ üzerinden gönderdiği
+      kill sayısı, harita, silah gibi bilgiler; <code>candidates.json</code>
+      dosyasında.</li>
+    <li><strong>YouTube erişim anahtarı</strong> — Google ile yetkilendirme
+      sonrası oluşan <code>.tokens.json</code> dosyası. Yalnızca yerel diskte
+      durur; silinirse erişim biter.</li>
+  </ul>
+
+  <h2>Google / YouTube verisinin kullanımı</h2>
+  <p>Araç, kullanıcının Google hesabından şu izinleri ister:</p>
+  <ul>
+    <li><code>youtube.upload</code> — kullanıcının <strong>onayladığı</strong>
+      videoyu <strong>kendi kanalına</strong> yüklemek için.</li>
+    <li><code>youtube.force-ssl</code> — yüklenen videoya, yayın bağlantısını
+      içeren ilk yorumu yazmak için.</li>
+  </ul>
+  <p>
+    Bu izinler başka hiçbir amaçla kullanılmaz. Araç kullanıcının videolarını,
+    izleme geçmişini, aboneliklerini veya kişisel bilgilerini okumaz; hiçbir
+    içeriği silmez veya değiştirmez. Kullanıcı onaylamadan hiçbir video yayına
+    çıkmaz.
+  </p>
+  <p>
+    YouTube üzerinden alınan veriler hiçbir zaman yerel diskin dışına
+    aktarılmaz, saklanmaz veya paylaşılmaz.
+  </p>
+
+  <h2>Erişimin iptali</h2>
+  <p>
+    Kullanıcı istediği zaman
+    <a href="https://myaccount.google.com/permissions">Google Hesap İzinleri</a>
+    sayfasından erişimi kaldırabilir. Ayrıca bilgisayardaki
+    <code>.tokens.json</code> dosyasını silmek de erişimi anında sonlandırır.
+  </p>
+
+  <h2>Üçüncü taraflar</h2>
+  <p>
+    Araç yalnızca kullanıcının kendi kurduğu servislerle konuşur: yerel
+    bilgisayardaki OBS ve CS2, bir de video yüklemek için YouTube Data API.
+    Başka hiçbir servise veri gönderilmez.
+  </p>
+
+  <h2>Değişiklikler</h2>
+  <p>
+    Bu politika değişirse güncel hali bu adreste yayımlanır ve yukarıdaki tarih
+    güncellenir.
+  </p>
+
+  <h2>İletişim</h2>
+  <p>
+    Sorular için: <a href="mailto:kburakengin@gmail.com">kburakengin@gmail.com</a>
+  </p>
+
+  <footer><a href="./">← kaelith-clipper</a></footer>
+</div>
+</body>
+</html>

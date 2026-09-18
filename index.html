@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>kaelith-clipper</title>
+<style>
+  :root {
+    --ground: #0c1210;
+    --panel: #141a17;
+    --line: #23302a;
+    --ink: #e8edf5;
+    --muted: #8b95a7;
+    --accent: #12fc10;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--ground);
+    color: var(--ink);
+    font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 56px 20px 80px; }
+  h1 { font-size: 2rem; margin: 0 0 .4rem; letter-spacing: -.01em; }
+  h2 { font-size: 1.05rem; margin: 2.4rem 0 .7rem; color: var(--accent); }
+  .lede { color: var(--muted); margin: 0 0 2rem; }
+  code, pre {
+    font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+    font-size: .88em;
+  }
+  pre {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 10px;
+    padding: 14px 16px; overflow-x: auto; color: var(--ink);
+  }
+  ul { padding-left: 1.2rem; }
+  li { margin: .35rem 0; }
+  a { color: var(--accent); }
+  footer {
+    margin-top: 3rem; padding-top: 1.4rem; border-top: 1px solid var(--line);
+    color: var(--muted); font-size: .9rem;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>kaelith-clipper</h1>
+  <p class="lede">
+    CS2 yayınında dikkate değer anları yakalayıp dikey YouTube Short'una çeviren,
+    sabah onaylayıp yayınladığın bir masaüstü aracı.
+  </p>
+
+  <h2>Ne yapıyor</h2>
+  <ul>
+    <li>CS2'nin <strong>Game State Integration</strong> verisini dinler; multi-kill,
+      deagle one-tap, flash'lıyken alınan kill gibi anları tespit eder.</li>
+    <li>O anda OBS'in replay buffer'ını diske kaydettirir. Yayın sırasında
+      hiçbir kodlama yapılmaz.</li>
+    <li>Yayın bittikten sonra ffmpeg ile 1080×1920 dikey klip üretir ve oturum
+      kaydını maç maç keser.</li>
+    <li>Sabah açtığın yerel bir onay sayfasında klipleri izlersin; beğendiğini
+      başlığıyla birlikte <strong>kendi YouTube kanalına</strong> yükler.</li>
+  </ul>
+
+  <h2>YouTube erişimi neden gerekiyor</h2>
+  <p>
+    Araç yalnızca <strong>senin onayladığın</strong> videoyu <strong>senin kendi
+    kanalına</strong> yükler ve açıklamada geçen yayın bağlantısını ilk yorum
+    olarak ekler. Bunun için Google hesabından iki izin ister:
+  </p>
+  <pre>youtube.upload      — video yükleme
+youtube.force-ssl   — yüklenen videoya ilk yorumu yazma</pre>
+  <p>
+    Başka hiçbir veriye erişmez, hiçbir şeyi okumaz, silmez. Onaylamadığın
+    hiçbir video yayına çıkmaz.
+  </p>
+
+  <h2>Nerede çalışıyor</h2>
+  <p>
+    Tamamen kullanıcının kendi bilgisayarında. Geliştiricinin işlettiği bir
+    sunucu, hesap sistemi veya veritabanı yoktur; hiçbir veri dışarı çıkmaz.
+  </p>
+
+  <h2>İletişim</h2>
+  <p><a href="mailto:kburakengin@gmail.com">kburakengin@gmail.com</a></p>
+
+  <footer><a href="./privacy.html">Gizlilik Politikası</a></footer>
+</div>
+</body>
+</html>
