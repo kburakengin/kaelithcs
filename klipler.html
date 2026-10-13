@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kaelith Klipleri</title>
+<meta name="description" content="Kaelith yayınında chat'ten çalınabilen klipler ve komutları.">
+<style>
+:root { --bg: #0e1116; --card: #171b22; --line: #262c36; --ink: #e9edf2; --ink2: #9aa4b2; --accent: #53fc18; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; }
+header { max-width: 1100px; margin: 0 auto; padding: 28px 16px 8px; }
+h1 { margin: 0 0 6px; font-size: 26px; }
+header p { margin: 0; color: var(--ink2); }
+header code { color: var(--accent); }
+ul { list-style: none; margin: 0 auto; padding: 16px; max-width: 1100px; display: grid; gap: 14px;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); }
+.card { position: relative; width: 100%; display: flex; flex-direction: column; gap: 6px; padding: 0 0 12px; text-align: left;
+         background: var(--card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; color: inherit;
+         font: inherit; cursor: pointer; }
+.card:hover { border-color: var(--accent); }
+.pic { aspect-ratio: 16 / 9; background: #000; display: grid; place-items: center; }
+.pic img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.emo { font-size: 44px; }
+.card b { padding: 0 12px; font-weight: 600; }
+.card code { margin: 0 12px; align-self: flex-start; padding: 3px 8px; border-radius: 6px; background: #0b0d11;
+              color: var(--accent); font: 600 13px ui-monospace, Menlo, monospace; }
+.ok { position: absolute; inset: 0; display: grid; place-items: center; background: rgba(14,17,22,.85);
+       color: var(--accent); font-weight: 700; opacity: 0; transition: opacity .15s; pointer-events: none; }
+.card.copied .ok { opacity: 1; }
+footer { text-align: center; color: var(--ink2); padding: 8px 16px 32px; }
+footer a { color: var(--accent); }
+</style>
+</head>
+<body>
+<header>
+  <h1>Klipler</h1>
+  <p>Yayında chat'e komutu yaz, klip ekranda oynasın. Komutu kopyalamak için karta dokun. Sadece <code>!klip</code> yazarsan rastgele biri gelir. İki klip arası 60 sn.</p>
+</header>
+<ul>
+<li><button class="card" data-cmd="!klip xantares"><span class="pic"><img src="https://i.ytimg.com/vi/3bIpcNB7QwA/mqdefault.jpg" alt="" loading="lazy"></span><b>Xantares yenge 1 keleş 2</b><code>!klip xantares</code><span class="ok">Kopyalandı</span></button></li>
+<li><button class="card" data-cmd="!klip siir"><span class="pic"><img src="https://i.ytimg.com/vi/XbmWvBflS20/mqdefault.jpg" alt="" loading="lazy"></span><b>Xantares şiir gibi sövdü (küfürlü)</b><code>!klip siir</code><span class="ok">Kopyalandı</span></button></li>
+<li><button class="card" data-cmd="!klip maj3r"><span class="pic"><img src="https://i.ytimg.com/vi/EGa14pyC138/mqdefault.jpg" alt="" loading="lazy"></span><b>Maj3r Furia&#x27;ya sinirleniyor</b><code>!klip maj3r</code><span class="ok">Kopyalandı</span></button></li>
+<li><button class="card" data-cmd="!klip cocugu"><span class="pic"><img src="https://i.ytimg.com/vi/IY_fyFzy3cU/mqdefault.jpg" alt="" loading="lazy"></span><b>Xantares küfürlü çocuğu izliyor</b><code>!klip cocugu</code><span class="ok">Kopyalandı</span></button></li>
+<li><button class="card" data-cmd="!klip oynuyor"><span class="pic"><img src="https://i.ytimg.com/vi/MSvIhQVzVQc/mqdefault.jpg" alt="" loading="lazy"></span><b>Maj3r oynuyor</b><code>!klip oynuyor</code><span class="ok">Kopyalandı</span></button></li>
+<li><button class="card" data-cmd="!klip gta"><span class="pic"><img src="https://i.ytimg.com/vi/INWeeTHkWBo/mqdefault.jpg" alt="" loading="lazy"></span><b>GTA Wasted</b><code>!klip gta</code><span class="ok">Kopyalandı</span></button></li>
+<li><button class="card" data-cmd="!klip mission"><span class="pic"><img src="https://i.ytimg.com/vi/_lLJGvygENo/mqdefault.jpg" alt="" loading="lazy"></span><b>Mission failed</b><code>!klip mission</code><span class="ok">Kopyalandı</span></button></li>
+<li><button class="card" data-cmd="!klip died"><span class="pic"><img src="https://i.ytimg.com/vi/-ZGlaAxB7nI/mqdefault.jpg" alt="" loading="lazy"></span><b>YOU DIED</b><code>!klip died</code><span class="ok">Kopyalandı</span></button></li>
+<li><button class="card" data-cmd="!klip directed"><span class="pic"><img src="https://i.ytimg.com/vi/h3RNElMbdUY/mqdefault.jpg" alt="" loading="lazy"></span><b>Directed by Robert B. Weide</b><code>!klip directed</code><span class="ok">Kopyalandı</span></button></li>
+<li><button class="card" data-cmd="!klip coffin"><span class="pic"><img src="https://i.ytimg.com/vi/sbCUP85vIHI/mqdefault.jpg" alt="" loading="lazy"></span><b>Coffin dance</b><code>!klip coffin</code><span class="ok">Kopyalandı</span></button></li>
+<li><button class="card" data-cmd="!klip john"><span class="pic"><img src="https://i.ytimg.com/vi/5CB6-jeOc5Y/mqdefault.jpg" alt="" loading="lazy"></span><b>John Cena</b><code>!klip john</code><span class="ok">Kopyalandı</span></button></li>
+<li><button class="card" data-cmd="!klip god"><span class="pic"><img src="https://i.ytimg.com/vi/31g0YE61PLQ/mqdefault.jpg" alt="" loading="lazy"></span><b>No God please no</b><code>!klip god</code><span class="ok">Kopyalandı</span></button></li>
+<li><button class="card" data-cmd="!klip inevitable"><span class="pic"><img src="https://i.ytimg.com/vi/3bY0unjZ5Kw/mqdefault.jpg" alt="" loading="lazy"></span><b>I am inevitable</b><code>!klip inevitable</code><span class="ok">Kopyalandı</span></button></li>
+<li><button class="card" data-cmd="!klip wow"><span class="pic"><img src="https://i.ytimg.com/vi/maunWLLpJdg/mqdefault.jpg" alt="" loading="lazy"></span><b>Wow</b><code>!klip wow</code><span class="ok">Kopyalandı</span></button></li>
+<li><button class="card" data-cmd="!klip vay"><span class="pic"><img src="https://i.ytimg.com/vi/kxqYaEMjAYg/mqdefault.jpg" alt="" loading="lazy"></span><b>Kemal Sunal: Vay canına ne diyo bu</b><code>!klip vay</code><span class="ok">Kopyalandı</span></button></li>
+<li><button class="card" data-cmd="!klip cama"><span class="pic"><img src="https://i.ytimg.com/vi/oAW4tJ985_A/mqdefault.jpg" alt="" loading="lazy"></span><b>Kemal Sunal: Cama ekmek banma</b><code>!klip cama</code><span class="ok">Kopyalandı</span></button></li>
+<li><button class="card" data-cmd="!klip halt"><span class="pic"><img src="https://i.ytimg.com/vi/-Bf8fdbA3Rs/mqdefault.jpg" alt="" loading="lazy"></span><b>Recep İvedik: Bir halt yaptığınız yok</b><code>!klip halt</code><span class="ok">Kopyalandı</span></button></li>
+<li><button class="card" data-cmd="!klip penalti"><span class="pic"><img src="https://i.ytimg.com/vi/96vziqF69lU/mqdefault.jpg" alt="" loading="lazy"></span><b>Recep İvedik penaltı</b><code>!klip penalti</code><span class="ok">Kopyalandı</span></button></li>
+<li><button class="card" data-cmd="!klip amirim"><span class="pic"><img src="https://i.ytimg.com/vi/TtdxfVavAUk/mqdefault.jpg" alt="" loading="lazy"></span><b>Behzat Ç: Ne amirim lan</b><code>!klip amirim</code><span class="ok">Kopyalandı</span></button></li>
+<li><button class="card" data-cmd="!klip baba"><span class="pic"><img src="https://i.ytimg.com/vi/CeLTmZl4OcQ/mqdefault.jpg" alt="" loading="lazy"></span><b>Şener Şen: Eh baba</b><code>!klip baba</code><span class="ok">Kopyalandı</span></button></li>
+</ul>
+<footer><a href="https://kick.com/kaelithcs">kick.com/kaelithcs</a></footer>
+<script>
+document.querySelectorAll('.card').forEach(b => b.addEventListener('click', async () => {
+  try { await navigator.clipboard.writeText(b.dataset.cmd); } catch (e) { return; }
+  b.classList.add('copied');
+  setTimeout(() => b.classList.remove('copied'), 900);
+}));
+</script>
+</body>
+</html>
