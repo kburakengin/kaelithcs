@@ -238,5 +238,17 @@
    "start": 0,
    "end": 0
   }
+ },
+ {
+  "title": "tamam tamam",
+  "cmd": "!klip tamam",
+  "by": "kaelithcs",
+  "img": "https://i.ytimg.com/vi/3XiUFKmRJOE/maxresdefault.jpg",
+  "emoji": "",
+  "video": {
+   "id": "3XiUFKmRJOE",
+   "start": 6,
+   "end": 12
+  }
  }
 ]
