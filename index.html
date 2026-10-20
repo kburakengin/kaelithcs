@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="tr">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,15 +40,51 @@
     margin-top: 3rem; padding-top: 1.4rem; border-top: 1px solid var(--line);
     color: var(--muted); font-size: .9rem;
   }
+  .yt { display: inline-flex; align-items: center; gap: 10px; padding: 10px 14px; border: 1px solid var(--line); border-radius: 10px; color: var(--ink); text-decoration: none; background: var(--panel); }
+  .yt:hover { border-color: #FF0000; }
+  .note { color: var(--muted); font-size: .92rem; }
+  hr { border: 0; border-top: 1px solid var(--line); margin: 3rem 0 0; }
 </style>
 </head>
 <body>
 <div class="wrap">
   <h1>kaelith-clipper</h1>
   <p class="lede">
-    CS2 yayınında dikkate değer anları yakalayıp dikey YouTube Short'una çeviren,
-    sabah onaylayıp yayınladığın bir masaüstü aracı.
+    A personal desktop tool that turns my Counter-Strike 2 streams into videos
+    and Shorts for my own YouTube channel.
   </p>
+
+  <a class="yt" href="https://www.youtube.com/@kaelithcs">
+    <svg viewBox="0 0 28 20" width="34" height="24" aria-hidden="true"><rect width="28" height="20" rx="5" fill="#FF0000"/><path d="M11 5.5v9l8-4.5z" fill="#fff"/></svg>
+    <span>YouTube: @kaelithcs</span>
+  </a>
+  <p class="note">This application uses <strong>YouTube API Services</strong>.</p>
+
+  <h2>What it does</h2>
+  <ul>
+    <li>Listens to CS2's Game State Integration data during my stream and marks
+      the notable moments (multi-kills, one-taps and so on).</li>
+    <li>After the stream it cuts those moments and the matches into videos on my PC.</li>
+    <li>I review every video on a local approval page. Only the ones I approve are
+      uploaded, scheduled, to <strong>my own YouTube channel</strong>.</li>
+  </ul>
+
+  <h2>Why it needs YouTube access</h2>
+  <p>It signs in with my own Google account (OAuth 2.0) and asks for two scopes:</p>
+  <pre>youtube.upload      — upload my approved videos (with a publish time)
+youtube.force-ssl   — set thumbnails, add videos to my playlists, post one
+                      comment under my own videos, update my own video titles,
+                      read view counts of my own videos for a weekly report</pre>
+  <p>
+    It only acts on my own channel. It runs only on my computer; there is no
+    server, account system or database run by the developer, and no data leaves
+    my computer except the calls to the YouTube API.
+  </p>
+
+  <h2>Contact</h2>
+  <p><a href="mailto:kburakengin@gmail.com">kburakengin@gmail.com</a></p>
+
+  <hr>
 
   <h2>Ne yapıyor</h2>
   <ul>
@@ -68,11 +104,11 @@
     kanalına</strong> yükler ve açıklamada geçen yayın bağlantısını ilk yorum
     olarak ekler. Bunun için Google hesabından iki izin ister:
   </p>
-  <pre>youtube.upload      — video yükleme
-youtube.force-ssl   — yüklenen videoya ilk yorumu yazma</pre>
+  <pre>youtube.upload      — onaylanan videoyu (yayın saatiyle) yükleme
+youtube.force-ssl   — kapak, oynatma listesi, videonun altına tek yorum,
+                      kendi videolarının başlığı ve izlenme sayıları</pre>
   <p>
-    Başka hiçbir veriye erişmez, hiçbir şeyi okumaz, silmez. Onaylamadığın
-    hiçbir video yayına çıkmaz.
+    Yalnızca kendi kanalında işlem yapar. Onaylamadığın hiçbir video yayına çıkmaz.
   </p>
 
   <h2>Nerede çalışıyor</h2>
@@ -84,7 +120,7 @@ youtube.force-ssl   — yüklenen videoya ilk yorumu yazma</pre>
   <h2>İletişim</h2>
   <p><a href="mailto:kburakengin@gmail.com">kburakengin@gmail.com</a></p>
 
-  <footer><a href="./privacy.html">Gizlilik Politikası</a></footer>
+  <footer><a href="./privacy.html">Privacy Policy / Gizlilik Politikası</a> · <a href="./terms.html">Terms of Service / Kullanım Şartları</a></footer>
 </div>
 </body>
 </html>
